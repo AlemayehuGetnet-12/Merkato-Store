@@ -66,7 +66,7 @@ function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      {/* gradient + pattern backgrounds */}
+      
       <div className="absolute inset-0 -z-10 gradient-primary" />
       <div className="absolute inset-0 -z-10 kente-pattern opacity-60" />
       <div className="absolute -right-32 -top-32 -z-10 h-[480px] w-[480px] rounded-full bg-gold/30 blur-3xl" />
@@ -74,7 +74,7 @@ function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 lg:min-h-[80vh] lg:grid-cols-2 lg:py-20">
 
-        {/* ── Left: text + search ── */}
+        {/* left col */}
         <div className="text-primary-foreground animate-fade-up">
           <span className="inline-flex items-center gap-2 rounded-full glass-dark px-3 py-1.5 text-xs font-semibold uppercase tracking-widest">
             <Sparkles className="h-3.5 w-3.5 text-gold" /> New season · 50% off
@@ -142,7 +142,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* ── Right: hero image card + floating badges ── */}
+        {/* right col */}
         <div className="relative mx-auto w-full max-w-xl">
           <div className="relative overflow-hidden rounded-[2rem] bg-card/10 shadow-(--shadow-elegant)">
             <Image
@@ -155,7 +155,7 @@ function Hero() {
             />
           </div>
 
-          {/* floating badge — top left */}
+          {/* badge top-left */}
           <Link
             href="/products/1"
             className="absolute -left-4 top-10 hidden w-56 rounded-2xl bg-card p-3 shadow-(--shadow-elegant) animate-float sm:block"
@@ -176,7 +176,7 @@ function Hero() {
             </div>
           </Link>
 
-          {/* floating badge — bottom right */}
+          {/* badge bottom-right */}
           <Link
             href="/products/3"
             className="absolute -right-2 bottom-16 hidden w-52 rounded-2xl bg-card p-3 shadow-(--shadow-elegant) animate-float-slow sm:block"
@@ -199,7 +199,7 @@ function Hero() {
             </div>
           </Link>
 
-          {/* trust pill — bottom centre */}
+          {/* trust pill */}
           <div className="absolute -bottom-4 left-1/2 hidden -translate-x-1/2 items-center gap-2 rounded-full bg-card px-4 py-2 shadow-(--shadow-elegant) sm:flex">
             <div className="flex">
               {[0, 1, 2, 3, 4].map((i) => (
@@ -214,9 +214,7 @@ function Hero() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   TRUST TICKER
-───────────────────────────────────────────── */
+/* TRUST TICKER */
 function TrustTicker() {
   const items = [
     "10,000+ sellers", "5M+ products", "Delivery to 7 countries",
@@ -240,9 +238,7 @@ function TrustTicker() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   SHARED SECTION HEADER
-───────────────────────────────────────────── */
+/* SECTION HEADER */
 function SectionHeader({ eyebrow, title, subtitle, viewAll }) {
   return (
     <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:justify-between">
@@ -264,9 +260,7 @@ function SectionHeader({ eyebrow, title, subtitle, viewAll }) {
   );
 }
 
-/* ─────────────────────────────────────────────
-   CATEGORIES
-───────────────────────────────────────────── */
+/* CATEGORIES */
 function Categories() {
   return (
     <section id="categories" className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
@@ -300,12 +294,10 @@ function Categories() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   COUNTDOWN (used inside FlashSales)
-───────────────────────────────────────────── */
+/* COUNTDOWN */
 function Countdown() {
   const [target] = useState(() => Date.now() + 1000 * 60 * 60 * 8 + 1000 * 60 * 23);
-  const [now, setNow] = useState(null); // null = not yet mounted
+  const [now, setNow] = useState(null);
 
   useEffect(() => {
     setNow(Date.now());
@@ -313,7 +305,6 @@ function Countdown() {
     return () => clearInterval(id);
   }, []);
 
-  // Render placeholder cells until client mounts to avoid hydration mismatch
   if (now === null) {
     return (
       <div className="flex items-center gap-2">
@@ -363,9 +354,7 @@ function Countdown() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   FLASH SALES
-───────────────────────────────────────────── */
+/* FLASH SALES */
 function FlashSales() {
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-gold/95 via-gold to-accent/90">
@@ -404,9 +393,7 @@ function FlashSales() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   FEATURED
-───────────────────────────────────────────── */
+/* FEATURED */
 function Featured() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
@@ -417,7 +404,7 @@ function Featured() {
         viewAll="/products"
       />
       <div className="mt-10 grid gap-5 lg:grid-cols-3">
-        {/* large editorial card */}
+        
         <Link
           href="/categories/fashion"
           className="group relative col-span-1 overflow-hidden rounded-3xl bg-card shadow-(--shadow-soft) lg:col-span-2 lg:row-span-2"
@@ -454,9 +441,7 @@ function Featured() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   SHOP BY COUNTRY
-───────────────────────────────────────────── */
+/* SHOP BY COUNTRY */
 function ShopByCountry() {
   return (
     <section className="relative overflow-hidden">
@@ -488,9 +473,7 @@ function ShopByCountry() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   BEST SELLERS
-───────────────────────────────────────────── */
+/* BEST SELLERS */
 function BestSellers() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
@@ -509,9 +492,7 @@ function BestSellers() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   NEW ARRIVALS
-───────────────────────────────────────────── */
+/* NEW ARRIVALS */
 function NewArrivals() {
   return (
     <section className="bg-card">
@@ -532,9 +513,7 @@ function NewArrivals() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   WHY CHOOSE US
-───────────────────────────────────────────── */
+/* WHY CHOOSE US */
 function WhyChoose() {
   const items = [
     { icon: ShieldCheck, t: "Secure Payments",  d: "Cards, mobile money, and cash on delivery — all protected." },
@@ -566,9 +545,7 @@ function WhyChoose() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   BRANDS
-───────────────────────────────────────────── */
+/* BRANDS */
 function Brands() {
   return (
     <section className="border-y border-border bg-card/40">
@@ -592,9 +569,7 @@ function Brands() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   TESTIMONIALS
-───────────────────────────────────────────── */
+/* TESTIMONIALS */
 function Testimonials() {
   return (
     <section className="relative overflow-hidden">
@@ -627,9 +602,7 @@ function Testimonials() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   APP PROMO
-───────────────────────────────────────────── */
+/* APP PROMO */
 function AppPromo() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
@@ -685,9 +658,7 @@ function AppPromo() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   NEWSLETTER
-───────────────────────────────────────────── */
+/* NEWSLETTER */
 function Newsletter() {
   return (
     <section className="mx-auto max-w-3xl px-4 py-16 text-center lg:py-24">

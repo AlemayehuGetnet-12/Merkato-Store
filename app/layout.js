@@ -2,6 +2,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "@/lib/store-context";
 import { SiteHeader } from "@/components/store/SiteHeader";
+import { SiteFooter } from "@/components/store/SiteFooter";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <StoreProvider>
           <SiteHeader />
           <main className="flex-1">{children}</main>
+          <SiteFooter />
         </StoreProvider>
       </body>
     </html>
