@@ -42,7 +42,7 @@ export default function Home() {
       <Featured />
       {/* <ShopByCountry /> */}
       <BestSellers />
-      {/* <NewArrivals /> */}
+      <NewArrivals />
       {/* <WhyChoose /> */}
       {/* <Brands /> */}
       {/* <Testimonials /> */}
