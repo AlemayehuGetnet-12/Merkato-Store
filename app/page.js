@@ -40,7 +40,7 @@ export default function Home() {
       <Categories />
       <FlashSales />
       <Featured />
-      {/* <ShopByCountry /> */}
+      <ShopByCountry />
       <BestSellers />
       <NewArrivals />
       <WhyChoose />
