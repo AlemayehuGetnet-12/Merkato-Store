@@ -47,7 +47,7 @@ export default function Home() {
       <Brands />
       <Testimonials />
       <AppPromo />
-      {/* <Newsletter /> */}
+      <Newsletter />
     </div>
   );
 }
