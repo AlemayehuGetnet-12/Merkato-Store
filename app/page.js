@@ -41,7 +41,7 @@ export default function Home() {
       <FlashSales />
       <Featured />
       {/* <ShopByCountry /> */}
-      {/* <BestSellers /> */}
+      <BestSellers />
       {/* <NewArrivals /> */}
       {/* <WhyChoose /> */}
       {/* <Brands /> */}
