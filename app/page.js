@@ -46,7 +46,7 @@ export default function Home() {
       <WhyChoose />
       <Brands />
       <Testimonials />
-      {/* <AppPromo /> */}
+      <AppPromo />
       {/* <Newsletter /> */}
     </div>
   );
