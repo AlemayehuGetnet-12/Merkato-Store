@@ -44,7 +44,7 @@ export default function Home() {
       <BestSellers />
       <NewArrivals />
       <WhyChoose />
-      {/* <Brands /> */}
+      <Brands />
       <Testimonials />
       {/* <AppPromo /> */}
       {/* <Newsletter /> */}
