@@ -37,7 +37,7 @@ export default function Home() {
     <div>
       <Hero />
       <TrustTicker />
-      {/* <Categories /> */}
+      <Categories />
       {/* <FlashSales /> */}
       {/* <Featured /> */}
       {/* <ShopByCountry /> */}
@@ -52,9 +52,8 @@ export default function Home() {
   );
 }
 
-/* ─────────────────────────────────────────────
-   HERO
-───────────────────────────────────────────── */
+/* HERO */
+
 function Hero() {
   const router = useRouter();
 
