@@ -1,28 +1,21 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+"use client";
+
 import { useState } from "react";
+import Link from "next/link";
 import { Mail, ArrowLeft, Check } from "lucide-react";
 
-export const Route = createFileRoute("/forgot-password")({
-  head: () => ({
-    meta: [{ title: "Forgot Password — Merkato Store" }],
-  }),
-  component: ForgotPasswordPage,
-});
-
-function ForgotPasswordPage() {
+export default function ForgotPasswordForm() {
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // TODO: Call API to send reset email
     setSent(true);
   };
 
   return (
-    <div className="mx-auto max-w-md px-4 py-12 lg:py-20">
+    <>
       <Link
-        to="/login"
+        href="/login"
         className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary"
       >
         <ArrowLeft className="h-4 w-4" />
@@ -34,7 +27,7 @@ function ForgotPasswordPage() {
       </h1>
 
       <p className="mt-2 text-muted-foreground">
-        Enter your email address and we'll send you a password reset link.
+        Enter your email address and we&apos;ll send you a password reset link.
       </p>
 
       {sent ? (
@@ -48,11 +41,11 @@ function ForgotPasswordPage() {
           </h2>
 
           <p className="mt-2 text-sm text-muted-foreground">
-            We've sent a password reset link to your email address.
+            We have sent a password reset link to your email address.
           </p>
 
           <Link
-            to="/reset-password"
+            href="/reset-password"
             className="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary-glow"
           >
             Continue
@@ -85,8 +78,6 @@ function ForgotPasswordPage() {
           </button>
         </form>
       )}
-    </div>
+    </>
   );
 }
-
-export default ForgotPasswordPage;

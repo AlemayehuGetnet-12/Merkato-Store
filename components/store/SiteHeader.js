@@ -276,6 +276,7 @@ export function SiteHeader() {
                 <Link href="/brands" className="block rounded-lg px-3 py-2 hover:bg-secondary">Brands</Link>
                 <div className="my-2 border-t border-border" />
                 <Link href="/account" className="block rounded-lg px-3 py-2 hover:bg-secondary">My Account</Link>
+                <Link href="/forgot-password" className="block rounded-lg px-3 py-2 hover:bg-secondary">Forgot Password</Link>
                 <Link href="/help-center" className="block rounded-lg px-3 py-2 hover:bg-secondary">Help Center</Link>
               </div>
             </nav>
