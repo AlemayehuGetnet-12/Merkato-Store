@@ -5,12 +5,6 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 import { fmt } from "@/lib/store-data";
 
-/**
- * ProductCard
- * Props:
- *   p        – product object from store-data
- *   ribbon   – optional string label ("Best Seller", "New", etc.)
- */
 export function ProductCard({ p, ribbon }) {
   const discount = p.original
     ? Math.round(((p.original - p.price) / p.original) * 100)
