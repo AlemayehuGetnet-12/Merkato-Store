@@ -330,26 +330,13 @@ function Countdown() {
   const m = Math.floor((diff % 3600000) / 60000);
   const s = Math.floor((diff % 60000) / 1000);
 
-  function Cell({ n, label }) {
-    return (
-      <div className="flex flex-col items-center">
-        <div className="grid h-14 w-14 place-items-center rounded-xl bg-ink font-display text-2xl font-bold tabular-nums text-primary-foreground shadow-inner">
-          {String(n).padStart(2, "0")}
-        </div>
-        <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-gold-foreground/80">
-          {label}
-        </span>
-      </div>
-    );
-  }
-
   return (
     <div className="flex items-center gap-2">
-      <Cell n={h} label="Hrs" />
+      <CountdownCell n={h} label="Hrs" />
       <span className="text-2xl font-bold text-gold-foreground">:</span>
-      <Cell n={m} label="Min" />
+      <CountdownCell n={m} label="Min" />
       <span className="text-2xl font-bold text-gold-foreground">:</span>
-      <Cell n={s} label="Sec" />
+      <CountdownCell n={s} label="Sec" />
     </div>
   );
 }

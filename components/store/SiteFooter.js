@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import Link from "next/link";
 import { ChevronDown, Globe, Send } from "lucide-react";
 import { CATEGORY_LIST } from "@/lib/store-data";
@@ -40,6 +41,8 @@ function IconYoutube() {
 const SOCIAL_ICONS = [IconFacebook, IconInstagram, IconTwitter, IconYoutube];
 
 export function SiteFooter() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="bg-ink text-primary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-16">
@@ -121,7 +124,7 @@ export function SiteFooter() {
         {/* Bottom bar */}
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-primary-foreground/60 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-4">
-            <p>© {new Date().getFullYear()} Merkato Store. All rights reserved.</p>
+            <p>© {year} Merkato Store. All rights reserved.</p>
             <Link href="/privacy-policy" className="hover:text-gold">Privacy</Link>
             <Link href="/terms" className="hover:text-gold">Terms</Link>
           </div>
