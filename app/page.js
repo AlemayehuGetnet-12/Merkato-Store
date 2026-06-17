@@ -5,9 +5,23 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
-  Search, Star, Flame, Truck, ShieldCheck, Headphones, RotateCcw,
-  Smartphone, Shirt, Sparkles, Apple, Home as HomeIcon, Gem,
-  ArrowRight, Play, Send, MapPin,
+  Search,
+  Star,
+  Flame,
+  Truck,
+  ShieldCheck,
+  Headphones,
+  RotateCcw,
+  Smartphone,
+  Shirt,
+  Sparkles,
+  Apple,
+  Home as HomeIcon,
+  Gem,
+  ArrowRight,
+  Play,
+  Send,
+  MapPin,
 } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import pHeadphones from "@/assets/p-headphones.jpg";
@@ -27,9 +41,27 @@ const CATEGORY_ICONS = {
 };
 
 const TESTIMONIALS = [
-  { name: "Amara O.", country: "🇳🇬 Lagos",   quote: "Fastest delivery I've had — and the packaging felt premium. This is my new go-to.", rating: 5 },
-  { name: "Layla H.", country: "🇦🇪 Dubai",   quote: "Finally a marketplace that understands the region. Prices and selection are unmatched.", rating: 5 },
-  { name: "Kofi M.",  country: "🇰🇪 Nairobi", quote: "Bought a phone during flash sale, saved 30%, arrived in 48 hours. Trust earned.", rating: 5 },
+  {
+    name: "Amara O.",
+    country: "🇳🇬 Lagos",
+    quote:
+      "Fastest delivery I've had — and the packaging felt premium. This is my new go-to.",
+    rating: 5,
+  },
+  {
+    name: "Layla H.",
+    country: "🇦🇪 Dubai",
+    quote:
+      "Finally a marketplace that understands the region. Prices and selection are unmatched.",
+    rating: 5,
+  },
+  {
+    name: "Kofi M.",
+    country: "🇰🇪 Nairobi",
+    quote:
+      "Bought a phone during flash sale, saved 30%, arrived in 48 hours. Trust earned.",
+    rating: 5,
+  },
 ];
 
 export default function Home() {
@@ -66,14 +98,12 @@ function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      
       <div className="absolute inset-0 -z-10 gradient-primary" />
       <div className="absolute inset-0 -z-10 kente-pattern opacity-60" />
       <div className="absolute -right-32 -top-32 -z-10 h-[480px] w-[480px] rounded-full bg-gold/30 blur-3xl" />
       <div className="absolute -bottom-40 -left-20 -z-10 h-[420px] w-[420px] rounded-full bg-accent/20 blur-3xl" />
 
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 lg:min-h-[80vh] lg:grid-cols-2 lg:py-20">
-
         {/* left col */}
         <div className="text-primary-foreground animate-fade-up">
           <span className="inline-flex items-center gap-2 rounded-full glass-dark px-3 py-1.5 text-xs font-semibold uppercase tracking-widest">
@@ -89,8 +119,8 @@ function Hero() {
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
-            Millions of products. Trusted sellers. Fast delivery across seven countries — all in one
-            beautifully simple place.
+            Millions of products. Trusted sellers. Fast delivery across seven
+            countries — all in one beautifully simple place.
           </p>
 
           <form onSubmit={handleSearch} className="mt-7 max-w-xl">
@@ -137,7 +167,10 @@ function Hero() {
               ))}
             </div>
             <p>
-              <span className="font-semibold text-primary-foreground">2M+ shoppers</span> across 7 countries
+              <span className="font-semibold text-primary-foreground">
+                2M+ shoppers
+              </span>{" "}
+              across 7 countries
             </p>
           </div>
         </div>
@@ -169,8 +202,12 @@ function Hero() {
                 className="h-14 w-14 rounded-xl object-cover"
               />
               <div className="min-w-0">
-                <p className="text-[10px] font-semibold uppercase text-muted-foreground">Sonix</p>
-                <p className="truncate text-sm font-semibold text-foreground">Aurora Headphones</p>
+                <p className="text-[10px] font-semibold uppercase text-muted-foreground">
+                  Sonix
+                </p>
+                <p className="truncate text-sm font-semibold text-foreground">
+                  Aurora Headphones
+                </p>
                 <p className="text-sm font-bold text-accent">$129.99</p>
               </div>
             </div>
@@ -190,8 +227,12 @@ function Hero() {
                 className="h-14 w-14 rounded-xl object-cover"
               />
               <div className="min-w-0">
-                <p className="text-[10px] font-semibold uppercase text-muted-foreground">Pace</p>
-                <p className="truncate text-sm font-semibold text-foreground">Emerald Runner</p>
+                <p className="text-[10px] font-semibold uppercase text-muted-foreground">
+                  Pace
+                </p>
+                <p className="truncate text-sm font-semibold text-foreground">
+                  Emerald Runner
+                </p>
                 <div className="flex items-center gap-1 text-xs">
                   <Star className="h-3 w-3 fill-gold text-gold" /> 4.6
                 </div>
@@ -206,7 +247,9 @@ function Hero() {
                 <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" />
               ))}
             </div>
-            <p className="text-xs font-semibold text-foreground">Trusted by 2M+ shoppers</p>
+            <p className="text-xs font-semibold text-foreground">
+              Trusted by 2M+ shoppers
+            </p>
           </div>
         </div>
       </div>
@@ -217,8 +260,13 @@ function Hero() {
 /* TRUST TICKER */
 function TrustTicker() {
   const items = [
-    "10,000+ sellers", "5M+ products", "Delivery to 7 countries",
-    "Secure payments", "Mobile money supported", "14-day easy returns", "24/7 customer support",
+    "10,000+ sellers",
+    "5M+ products",
+    "Delivery to 7 countries",
+    "Secure payments",
+    "Mobile money supported",
+    "14-day easy returns",
+    "24/7 customer support",
   ];
   const row = [...items, ...items];
 
@@ -227,7 +275,10 @@ function TrustTicker() {
       <div className="no-scrollbar overflow-hidden">
         <div className="flex w-max animate-marquee gap-12 py-4 pr-12">
           {row.map((t, i) => (
-            <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div
+              key={i}
+              className="flex items-center gap-2 text-sm text-muted-foreground"
+            >
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               <span className="whitespace-nowrap font-medium">{t}</span>
             </div>
@@ -243,16 +294,23 @@ function SectionHeader({ eyebrow, title, subtitle, viewAll }) {
   return (
     <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">{eyebrow}</span>
+        <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+          {eyebrow}
+        </span>
         <h2 className="mt-2 font-display text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
           {title}
         </h2>
         {subtitle && (
-          <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">{subtitle}</p>
+          <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
+            {subtitle}
+          </p>
         )}
       </div>
       {viewAll && (
-        <Link href={viewAll} className="hidden text-sm font-semibold text-primary hover:underline sm:inline">
+        <Link
+          href={viewAll}
+          className="hidden text-sm font-semibold text-primary hover:underline sm:inline"
+        >
           View all →
         </Link>
       )}
@@ -283,8 +341,12 @@ function Categories() {
                 <Icon className="h-7 w-7" />
               </div>
               <div>
-                <p className="font-display text-sm font-bold text-foreground">{c.name}</p>
-                <p className="mt-1 text-[11px] font-medium text-muted-foreground">{c.count} items</p>
+                <p className="font-display text-sm font-bold text-foreground">
+                  {c.name}
+                </p>
+                <p className="mt-1 text-[11px] font-medium text-muted-foreground">
+                  {c.count} items
+                </p>
               </div>
             </Link>
           );
@@ -296,7 +358,9 @@ function Categories() {
 
 /* COUNTDOWN */
 function Countdown() {
-  const [target] = useState(() => Date.now() + 1000 * 60 * 60 * 8 + 1000 * 60 * 23);
+  const [target] = useState(
+    () => Date.now() + 1000 * 60 * 60 * 8 + 1000 * 60 * 23,
+  );
   const [now, setNow] = useState(null);
 
   useEffect(() => {
@@ -308,9 +372,15 @@ function Countdown() {
   if (now === null) {
     return (
       <div className="flex items-center gap-2">
-        {[["--", "Hrs"], ["--", "Min"], ["--", "Sec"]].map(([n, label], i) => (
+        {[
+          ["--", "Hrs"],
+          ["--", "Min"],
+          ["--", "Sec"],
+        ].map(([n, label], i) => (
           <div key={i} className="flex items-center gap-2">
-            {i > 0 && <span className="text-2xl font-bold text-gold-foreground">:</span>}
+            {i > 0 && (
+              <span className="text-2xl font-bold text-gold-foreground">:</span>
+            )}
             <div className="flex flex-col items-center">
               <div className="grid h-14 w-14 place-items-center rounded-xl bg-ink font-display text-2xl font-bold tabular-nums text-primary-foreground shadow-inner">
                 {n}
@@ -330,13 +400,26 @@ function Countdown() {
   const m = Math.floor((diff % 3600000) / 60000);
   const s = Math.floor((diff % 60000) / 1000);
 
+  function Cell({ n, label }) {
+    return (
+      <div className="flex flex-col items-center">
+        <div className="grid h-14 w-14 place-items-center rounded-xl bg-ink font-display text-2xl font-bold tabular-nums text-primary-foreground shadow-inner">
+          {String(n).padStart(2, "0")}
+        </div>
+        <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-gold-foreground/80">
+          {label}
+        </span>
+      </div>
+    );
+  }
+
   return (
     <div className="flex items-center gap-2">
-      <CountdownCell n={h} label="Hrs" />
+      <Cell n={h} label="Hrs" />
       <span className="text-2xl font-bold text-gold-foreground">:</span>
-      <CountdownCell n={m} label="Min" />
+      <Cell n={m} label="Min" />
       <span className="text-2xl font-bold text-gold-foreground">:</span>
-      <CountdownCell n={s} label="Sec" />
+      <Cell n={s} label="Sec" />
     </div>
   );
 }
@@ -372,7 +455,8 @@ function FlashSales() {
             href="/deals"
             className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary"
           >
-            View all deals <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+            View all deals{" "}
+            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
           </Link>
         </div>
       </div>
@@ -391,7 +475,6 @@ function Featured() {
         viewAll="/products"
       />
       <div className="mt-10 grid gap-5 lg:grid-cols-3">
-        
         <Link
           href="/categories/fashion"
           className="group relative col-span-1 overflow-hidden rounded-3xl bg-card shadow-(--shadow-soft) lg:col-span-2 lg:row-span-2"
@@ -447,8 +530,12 @@ function ShopByCountry() {
               href="/regions"
               className="group relative flex w-40 shrink-0 flex-col items-center gap-3 overflow-hidden rounded-3xl border border-border bg-card/80 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-(--shadow-elegant) md:w-auto"
             >
-              <span className="text-5xl transition group-hover:scale-110">{c.flag}</span>
-              <p className="font-display text-sm font-bold text-foreground">{c.name}</p>
+              <span className="text-5xl transition group-hover:scale-110">
+                {c.flag}
+              </span>
+              <p className="font-display text-sm font-bold text-foreground">
+                {c.name}
+              </p>
               <p className="inline-flex items-center gap-1 text-[11px] font-medium text-muted-foreground">
                 <MapPin className="h-3 w-3" /> Storefront
               </p>
@@ -503,17 +590,44 @@ function NewArrivals() {
 /* WHY CHOOSE US */
 function WhyChoose() {
   const items = [
-    { icon: ShieldCheck, t: "Secure Payments",  d: "Cards, mobile money, and cash on delivery — all protected." },
-    { icon: Truck,       t: "Fast Delivery",    d: "48-hour delivery in major cities across 7 countries." },
-    { icon: Star,        t: "Trusted Sellers",  d: "Every seller is verified, rated, and reviewed by you." },
-    { icon: Headphones,  t: "24/7 Support",     d: "Real humans, ready in English and Arabic, around the clock." },
-    { icon: RotateCcw,   t: "Easy Returns",     d: "Changed your mind? Return within 14 days, no questions asked." },
-    { icon: Sparkles,    t: "Member Rewards",   d: "Earn points on every order. Redeem for discounts and gifts." },
+    {
+      icon: ShieldCheck,
+      t: "Secure Payments",
+      d: "Cards, mobile money, and cash on delivery — all protected.",
+    },
+    {
+      icon: Truck,
+      t: "Fast Delivery",
+      d: "48-hour delivery in major cities across 7 countries.",
+    },
+    {
+      icon: Star,
+      t: "Trusted Sellers",
+      d: "Every seller is verified, rated, and reviewed by you.",
+    },
+    {
+      icon: Headphones,
+      t: "24/7 Support",
+      d: "Real humans, ready in English and Arabic, around the clock.",
+    },
+    {
+      icon: RotateCcw,
+      t: "Easy Returns",
+      d: "Changed your mind? Return within 14 days, no questions asked.",
+    },
+    {
+      icon: Sparkles,
+      t: "Member Rewards",
+      d: "Earn points on every order. Redeem for discounts and gifts.",
+    },
   ];
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
-      <SectionHeader eyebrow="The Merkato promise" title="Why shoppers choose us" />
+      <SectionHeader
+        eyebrow="The Merkato promise"
+        title="Why shoppers choose us"
+      />
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {items.map(({ icon: Icon, t, d }) => (
           <div
@@ -523,8 +637,12 @@ function WhyChoose() {
             <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
               <Icon className="h-6 w-6" />
             </div>
-            <h3 className="mt-5 font-display text-lg font-bold text-foreground">{t}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
+            <h3 className="mt-5 font-display text-lg font-bold text-foreground">
+              {t}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {d}
+            </p>
           </div>
         ))}
       </div>
@@ -565,19 +683,26 @@ function Testimonials() {
         <SectionHeader eyebrow="Real stories" title="Loved across the region" />
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t) => (
-            <div key={t.name} className="glass rounded-3xl p-7 shadow-(--shadow-soft)">
+            <div
+              key={t.name}
+              className="glass rounded-3xl p-7 shadow-(--shadow-soft)"
+            >
               <div className="flex items-center gap-1 text-gold">
                 {Array.from({ length: t.rating }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-gold text-gold" />
                 ))}
               </div>
-              <p className="mt-4 text-base leading-relaxed text-foreground">&ldquo;{t.quote}&rdquo;</p>
+              <p className="mt-4 text-base leading-relaxed text-foreground">
+                &ldquo;{t.quote}&rdquo;
+              </p>
               <div className="mt-6 flex items-center gap-3">
                 <div className="grid h-11 w-11 place-items-center rounded-full gradient-primary font-display text-sm font-bold text-primary-foreground">
                   {t.name[0]}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    {t.name}
+                  </p>
                   <p className="text-xs text-muted-foreground">{t.country}</p>
                 </div>
               </div>
@@ -605,7 +730,8 @@ function AppPromo() {
             Shop smarter from your pocket.
           </h2>
           <p className="mt-4 max-w-md text-primary-foreground/85">
-            Get app-only deals, faster checkout, mobile money, and real-time order tracking.
+            Get app-only deals, faster checkout, mobile money, and real-time
+            order tracking.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a
@@ -614,8 +740,12 @@ function AppPromo() {
             >
               <Apple className="h-7 w-7" />
               <span className="text-left">
-                <span className="block text-[10px] uppercase opacity-70">Download on</span>
-                <span className="block text-base font-semibold leading-tight">App Store</span>
+                <span className="block text-[10px] uppercase opacity-70">
+                  Download on
+                </span>
+                <span className="block text-base font-semibold leading-tight">
+                  App Store
+                </span>
               </span>
             </a>
             <a
@@ -624,8 +754,12 @@ function AppPromo() {
             >
               <Play className="h-7 w-7" />
               <span className="text-left">
-                <span className="block text-[10px] uppercase opacity-70">Get it on</span>
-                <span className="block text-base font-semibold leading-tight">Google Play</span>
+                <span className="block text-[10px] uppercase opacity-70">
+                  Get it on
+                </span>
+                <span className="block text-base font-semibold leading-tight">
+                  Google Play
+                </span>
               </span>
             </a>
           </div>
