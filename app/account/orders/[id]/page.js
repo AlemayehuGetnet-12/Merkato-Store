@@ -4,8 +4,8 @@ import Link from "next/link";
 import { Check, Truck, Package, MapPin, Download, RotateCcw } from "lucide-react";
 import { fmt, MOCK_ORDERS, PRODUCTS } from "@/lib/store-data";
 
-export default function OrderDetailPage({ params }) {
-  const { id } = params;
+export default async function OrderDetailPage({ params }) {
+  const { id } = await params;
   const order = MOCK_ORDERS.find((o) => o.id === id) ?? { id, date: "2026-06-09", status: "Processing", total: 199.99, items: 1, tracking: "DLV-" + id };
   const items = PRODUCTS.slice(0, order.items || 1);
   const steps = ["Ordered", "Processing", "Shipped", "Out for delivery", "Delivered"];
