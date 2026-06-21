@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 import { PageHeader } from "@/components/store/PageHeader";
-import { fmt, PRODUCTS } from "@/lib/store-data";
+import { fmt, imgSrc, PRODUCTS } from "@/lib/store-data";
 import { useCart } from "@/lib/store-context";
 
 export default function CartPage() {
@@ -83,11 +83,11 @@ export default function CartPage() {
                   className="flex gap-4 rounded-2xl border border-border bg-card p-4"
                 >
                   <Link
-                    href={`/products/${product.id}`}
+                    href={`/products/${product.slug ?? product.id}`}
                     className="h-28 w-28 shrink-0 overflow-hidden rounded-xl bg-muted sm:h-32 sm:w-32"
                   >
                     <img
-                      src={product.img}
+                      src={imgSrc(product.img)}
                       alt={product.name}
                       className="h-full w-full object-cover"
                     />
@@ -101,7 +101,7 @@ export default function CartPage() {
                         </p>
 
                         <Link
-                          href={`/products/${product.id}`}
+                          href={`/products/${product.slug ?? product.id}`}
                           className="line-clamp-2 font-semibold hover:text-primary"
                         >
                           {product.name}
@@ -154,11 +154,11 @@ export default function CartPage() {
                   {PRODUCTS.slice(6, 10).map((p) => (
                     <Link
                       key={p.id}
-                      href={`/products/${p.id}`}
+                      href={`/products/${p.slug ?? p.id}`}
                       className="overflow-hidden rounded-xl border border-border bg-card transition hover:-translate-y-1"
                     >
                       <img
-                        src={p.img}
+                        src={imgSrc(p.img)}
                         alt={p.name}
                         className="aspect-square w-full object-cover"
                       />
