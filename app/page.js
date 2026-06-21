@@ -190,7 +190,7 @@ function Hero() {
 
           {/* badge top-left */}
           <Link
-            href="/products/1"
+            href="/products/aurora-wireless-noise-cancelling-headphones"
             className="absolute -left-4 top-10 hidden w-56 rounded-2xl bg-card p-3 shadow-(--shadow-elegant) animate-float sm:block"
           >
             <div className="flex items-center gap-3">
@@ -215,7 +215,7 @@ function Hero() {
 
           {/* badge bottom-right */}
           <Link
-            href="/products/3"
+            href="/products/emerald-runner-performance-sneakers"
             className="absolute -right-2 bottom-16 hidden w-52 rounded-2xl bg-card p-3 shadow-(--shadow-elegant) animate-float-slow sm:block"
           >
             <div className="flex items-center gap-3">

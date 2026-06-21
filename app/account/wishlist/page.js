@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Heart, ShoppingBag, Trash2 } from "lucide-react";
-import { fmt, PRODUCTS } from "@/lib/store-data";
+import { fmt, imgSrc, PRODUCTS } from "@/lib/store-data";
 import { useWishlist } from "@/lib/store-context";
 
 export default function WishlistPage() {
@@ -26,11 +26,11 @@ export default function WishlistPage() {
         <div className="grid gap-3">
           {items.map((p) => (
             <div key={p.id} className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4">
-              <Link href={`/products/${p.id}`} className="h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-muted">
-                <img src={p.img} alt={p.name} className="h-full w-full object-cover" />
+              <Link href={`/products/${p.slug ?? p.id}`} className="h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-muted">
+                <img src={imgSrc(p.img)} alt={p.name} className="h-full w-full object-cover" />
               </Link>
               <div className="flex-1 min-w-0">
-                <Link href="/products/$id" params={{ id: p.id }} className="line-clamp-1 font-semibold hover:text-primary">{p.name}</Link>
+                <Link href={`/products/${p.slug ?? p.id}`} className="line-clamp-1 font-semibold hover:text-primary">{p.name}</Link>
                 <p className="text-xs text-muted-foreground">{p.brand}</p>
                 <p className="mt-1 font-display font-bold text-accent">{fmt(p.price)}</p>
               </div>
