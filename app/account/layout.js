@@ -50,8 +50,37 @@ export default function AccountLayout({ children }) {
       </section>
 
       <div className="mx-auto max-w-7xl px-4 py-10">
+        {/* Mobile tab bar */}
+        <nav className="no-scrollbar mb-6 flex gap-1 overflow-x-auto rounded-2xl border border-border bg-card p-1.5 lg:hidden">
+          {NAV.map((n) => {
+            const active = n.exact ? path === n.to : path.startsWith(n.to);
+            return (
+              <Link
+                key={n.to}
+                href={n.to}
+                className={`inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold transition ${
+                  active
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                }`}
+              >
+                <n.icon className="h-3.5 w-3.5" />
+                {n.label}
+              </Link>
+            );
+          })}
+          <button
+            onClick={() => router.push("/signin")}
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold text-ember hover:bg-ember/10"
+          >
+            <LogOut className="h-3.5 w-3.5" />
+            Sign out
+          </button>
+        </nav>
+
         <div className="grid gap-8 lg:grid-cols-[260px_1fr]">
-          <aside>
+          {/* Desktop sidebar */}
+          <aside className="hidden lg:block">
             <nav className="sticky top-32 space-y-1 rounded-2xl border border-border bg-card p-3">
               {NAV.map((n) => {
                 const active = n.exact ? path === n.to : path.startsWith(n.to);

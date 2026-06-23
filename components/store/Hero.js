@@ -75,16 +75,16 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="mt-8 flex items-center gap-5 text-xs text-primary-foreground/80">
+          <div className="mt-8 flex items-center gap-5">
             <div className="flex -space-x-2">
               {["🇳🇬", "🇰🇪", "🇦🇪", "🇪🇹"].map((f, i) => (
-                <span key={i} className="grid h-8 w-8 place-items-center rounded-full bg-card text-base shadow-md">
+                <span key={i} className="grid h-8 w-8 place-items-center rounded-full bg-white/20 text-base shadow-md ring-2 ring-white/10">
                   {f}
                 </span>
               ))}
             </div>
-            <p>
-              <span className="font-semibold text-primary-foreground">2M+ shoppers</span>{" "}
+            <p className="text-sm text-white/90">
+              <span className="font-bold text-white">2M+ shoppers</span>{" "}
               across 7 countries
             </p>
           </div>
