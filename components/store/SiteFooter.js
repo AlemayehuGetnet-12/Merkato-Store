@@ -96,7 +96,7 @@ export function SiteFooter() {
           {/* Link columns */}
           <Col title="About Merkato" links={[
             { label: "Our Story",  href: "/about" },
-            { label: "Careers",   href: "/about" },
+            { label: "Careers",   href: "/careers" },
             { label: "Brands",    href: "/brands" },
             { label: "Regions",   href: "/regions" },
           ]} />
