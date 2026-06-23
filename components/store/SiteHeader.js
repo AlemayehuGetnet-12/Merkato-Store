@@ -126,7 +126,7 @@ export function SiteHeader() {
                         {suggestions.map((p) => (
                           <Link
                             key={p.id}
-                            href={`/products/${p.id}`}
+                            href={`/products/${p.slug ?? p.id}`}
                             className="flex items-center gap-3 px-4 py-2.5 transition hover:bg-secondary"
                           >
                             <img src={p.img.src ?? p.img} alt="" className="h-10 w-10 rounded-lg object-cover" />
