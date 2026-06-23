@@ -16,10 +16,16 @@ export function ProductCard({ p, ribbon }) {
   const wished = wishlist.has(p.id);
 
   return (
-    <HoverCard openDelay={200} closeDelay={100}>
+    <HoverCard openDelay={300} closeDelay={100}>
       <HoverCardTrigger asChild>
-        <div className="group relative flex flex-col overflow-hidden rounded-2xl bg-card shadow-(--shadow-soft) transition-all duration-300 hover:-translate-y-1 hover:shadow-(--shadow-elegant)">
-          <Link href={`/products/${p.slug ?? p.id}`} className="relative aspect-square overflow-hidden bg-muted">
+        {/* group lives here — HoverCardTrigger renders this div directly via asChild */}
+        <div className="group relative flex flex-col overflow-hidden rounded-2xl bg-card shadow-(--shadow-soft) transition-all duration-300 hover:-translate-y-1 hover:shadow-(--shadow-elegant) cursor-pointer">
+
+          {/* Image area */}
+          <Link
+            href={`/products/${p.slug ?? p.id}`}
+            className="relative aspect-square overflow-hidden bg-muted"
+          >
             <img
               src={imgSrc(p.img)}
               alt={p.name}
@@ -39,56 +45,53 @@ export function ProductCard({ p, ribbon }) {
               </span>
             )}
 
-            {/* Quick Add — inside image so overflow-hidden doesn't clip it */}
-            <button
-              type="button"
+            {/* Quick Add — lives inside the image Link so overflow-hidden contains the slide */}
+            <div
               onClick={(e) => { e.preventDefault(); e.stopPropagation(); cart.add(p.id); }}
-              className="absolute inset-x-3 bottom-3 translate-y-2 rounded-xl bg-primary py-2.5 text-sm font-semibold text-primary-foreground opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+              className="absolute inset-x-3 bottom-3 translate-y-10 rounded-xl bg-primary py-2.5 text-center text-sm font-semibold text-primary-foreground opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
             >
               <span className="inline-flex items-center justify-center gap-2">
                 <Plus className="h-4 w-4" />
                 Quick Add
               </span>
-            </button>
+            </div>
           </Link>
 
-          {/* Wishlist */}
+          {/* Wishlist button */}
           <button
             type="button"
             onClick={(e) => { e.preventDefault(); wishlist.toggle(p.id); }}
-            className={`absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/90 backdrop-blur transition-opacity duration-300 ${
+            className={`absolute right-3 top-3 z-10 grid h-9 w-9 place-items-center rounded-full bg-white/90 backdrop-blur transition-opacity duration-300 ${
               wished ? "opacity-100" : "opacity-0 group-hover:opacity-100"
             }`}
           >
             <Heart className={`h-4 w-4 ${wished ? "fill-red-500 text-red-500" : "text-gray-700"}`} />
           </button>
 
+          {/* Info */}
           <Link href={`/products/${p.slug ?? p.id}`} className="flex flex-1 flex-col gap-1.5 p-4">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
               {p.brand}
             </p>
-
             <h3 className="line-clamp-2 text-sm font-semibold">{p.name}</h3>
-
             <div className="flex items-center gap-1 text-xs text-muted-foreground">
               <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
               <span className="font-medium text-foreground">{p.rating.toFixed(1)}</span>
               <span>({p.reviews})</span>
             </div>
-
             <div className="mt-auto flex items-baseline gap-2 pt-1">
               <span className="text-base font-bold text-accent">{fmt(p.price)}</span>
               {p.original && (
                 <span className="text-xs line-through text-muted-foreground">{fmt(p.original)}</span>
               )}
             </div>
-
             {p.lowStock && (
               <p className="text-[11px] font-semibold text-red-500">Only {p.lowStock} left!</p>
             )}
           </Link>
         </div>
       </HoverCardTrigger>
+
       <HoverCardContent side="right" className="w-64 p-4">
         <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{p.brand}</p>
         <p className="mt-1 text-sm font-semibold">{p.name}</p>
